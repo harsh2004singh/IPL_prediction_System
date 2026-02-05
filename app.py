@@ -8,7 +8,6 @@ import traceback   # ⭐ add this
 st.write("App started")  # to confirm app is running
 
 model_path = os.path.join(os.path.dirname(__file__), "pipe.pkl")
-st.write("Model path:", model_path)
 
 try:
     pipe = pickle.load(open(model_path, "rb"))
@@ -70,6 +69,7 @@ if st.button('Predict probablilty'):
     win = result[0][1]
     st.text(batting_team + " - " + str(round(win*100)) + "%")
     st.text(bowling_team + " - " + str(round(loss*100)) + "%")
+
 
 
 
